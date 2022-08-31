@@ -19,13 +19,13 @@
         </Grid.ColumnDefinitions>
         <Slider Name="sliderRed" Minimum="0" Maximum="255"
                 Margin="{Binding ElementName=indicator, Path=Padding}"
-                Value="{Binding ElementName=indicator, Path=Red}"></Slider>
+                Value="{Binding ElementName=indicator, Path=Red}" Grid.Row="0"></Slider>
         <Slider Name="sliderGreen" Minimum="0" Maximum="255"
                 Margin="{Binding ElementName=indicator, Path=Padding}"
-                Value="{Binding ElementName=indicator, Path=Green}"></Slider>
+                Value="{Binding ElementName=indicator, Path=Green}" Grid.Row="1"></Slider>
         <Slider Name="sliderBlue" Minimum="0" Maximum="255"
                 Margin="{Binding ElementName=indicator, Path=Padding}"
-                Value="{Binding ElementName=indicator, Path=Blue}"></Slider>
+                Value="{Binding ElementName=indicator, Path=Blue}" Grid.Row="2"></Slider>
         <Rectangle Grid.Column="1" Grid.RowSpan="3" Width="50" Stroke="Black" StrokeThickness="1"
                    StrokeDashArray="2 1">
             <Rectangle.Fill>

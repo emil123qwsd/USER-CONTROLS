@@ -36,34 +36,34 @@ namespace USER_CONTROLS
             ColorProperty = DependencyProperty.Register("Color", typeof(Color), typeof(Indicator),
                 new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorChanged)));
             RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(Indicator),
-              new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorRGBChanged)));
-            ColorProperty = DependencyProperty.Register("Green", typeof(byte), typeof(Indicator),
-              new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorRGBChanged)));
-            ColorProperty = DependencyProperty.Register("Blue", typeof(byte), typeof(Indicator),
-              new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorRGBChanged)));
+              new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
+            GreenProperty = DependencyProperty.Register("Green", typeof(byte), typeof(Indicator),
+              new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
+            BlueProperty = DependencyProperty.Register("Blue", typeof(byte), typeof(Indicator),
+              new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
 
             ColorChangedEvent = EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
                 typeof(RoutedPropertyChangedEventHandler<Color>), typeof(Indicator));
         }
         public Color Color 
         {
-            get { return (Color)GetValue(RedProperty); }
+            get { return (Color)GetValue(ColorProperty); }
             set { SetValue(ColorProperty, value); }
         }
         public byte Red
         {
             get { return (byte)GetValue(RedProperty); }
-            set { SetValue(ColorProperty, value); }
+            set { SetValue(RedProperty, value); }
         }
         public byte Green
         {
             get { return (byte)GetValue(GreenProperty); }
-            set { SetValue(ColorProperty, value); }
+            set { SetValue(GreenProperty, value); }
         }
         public byte Blue
         {
             get { return (byte)GetValue(BlueProperty); }
-            set { SetValue(ColorProperty, value); }
+            set { SetValue(BlueProperty, value); }
         }
         private static void OnColorRGBChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e) 
         {
